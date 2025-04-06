@@ -1,82 +1,134 @@
+// 기본 스타일 설정
 body {
     font-family: $font-primary;
     font-weight: $font-regular;
     line-height: 1.5;
+    color: $black;
+    background-color: #fff;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+// 타이포그래피 추가 설정
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
     font-family: $font-primary;
     font-weight: $font-bold;
     margin-bottom: 1rem;
+    line-height: 1.2;
 }
 
-h1 {
+h1, .h1 {
     font-weight: $font-black;
     font-size: 2.5rem;
 }
 
-h2 {
+h2, .h2 {
     font-weight: $font-extrabold;
     font-size: 2rem;
 }
 
-h3 {
+h3, .h3 {
     font-weight: $font-bold;
     font-size: 1.75rem;
 }
 
-h4 {
+h4, .h4 {
     font-weight: $font-semibold;
     font-size: 1.5rem;
 }
 
-h5 {
+h5, .h5 {
     font-weight: $font-medium;
     font-size: 1.25rem;
 }
 
-h6 {
+h6, .h6 {
     font-weight: $font-regular;
     font-size: 1rem;
 }
 
-.thin-text {
-    font-weight: $font-thin;
+// 폰트 무게 유틸리티 클래스
+.font-thin {
+    font-weight: $font-thin !important;
 }
 
-.extralight-text {
-    font-weight: $font-extralight;
+.font-extralight {
+    font-weight: $font-extralight !important;
 }
 
-.light-text {
-    font-weight: $font-light;
+.font-light {
+    font-weight: $font-light !important;
 }
 
-.regular-text {
-    font-weight: $font-regular;
+.font-regular {
+    font-weight: $font-regular !important;
 }
 
-.medium-text {
+.font-medium {
+    font-weight: $font-medium !important;
+}
+
+.font-semibold {
+    font-weight: $font-semibold !important;
+}
+
+.font-bold {
+    font-weight: $font-bold !important;
+}
+
+.font-extrabold {
+    font-weight: $font-extrabold !important;
+}
+
+.font-black {
+    font-weight: $font-black !important;
+}
+
+// 링크 스타일
+a {
+    color: $primary;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+    
+    &:hover {
+        color: darken($primary, 10%);
+    }
+}
+
+// 버튼 스타일 확장
+.btn {
     font-weight: $font-medium;
+    letter-spacing: 0.5px;
+    
+    &.btn-primary {
+        &:hover {
+            background-color: darken($primary, 7.5%);
+            border-color: darken($primary, 7.5%);
+        }
+    }
 }
 
-.semibold-text {
-    font-weight: $font-semibold;
+// 기본 마진 및 패딩 유틸리티
+.mb-lg {
+    margin-bottom: 2.5rem;
 }
 
-.bold-text {
-    font-weight: $font-bold;
+.mt-lg {
+    margin-top: 2.5rem;
 }
 
-.extrabold-text {
-    font-weight: $font-extrabold;
-}
-
-.black-text {
-    font-weight: $font-black;
+// 컨테이너 및 섹션 스타일
+.section {
+    padding: 4rem 0;
+    
+    &-sm {
+        padding: 2rem 0;
+    }
+    
+    &-lg {
+        padding: 6rem 0;
+    }
 }

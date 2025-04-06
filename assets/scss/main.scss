@@ -1,10 +1,19 @@
-@import "_reset";
+// 기본 설정 및 변수
 @import "_variables"; 
-@import "_fonts"; 
 @import "_mixins";
+
+// Bootstrap 설정
 @import "_bootstrap"; 
+
+// 기본 스타일 및 리셋
+@import "_reset";
+@import "_fonts"; 
 @import "_global";
+
+// 컴포넌트 및 레이아웃
 @import "_components";
 @import "_header";
 @import "_footer";
+
+// 반응형 스타일
 @import "_responsive";
