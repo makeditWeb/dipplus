@@ -6,7 +6,7 @@
     "sass": "^1.86.0"
   },
   "scripts": {
-    "build-sass": "sass assets/scss/main.scss assets/css/main.css",
-    "watch-sass": "sass --watch assets/scss/main.scss:assets/css/main.css"
+    "build-sass": "npx sass assets/scss/main.scss assets/css/main.css",
+    "watch-sass": "npx sass --watch assets/scss/main.scss:assets/css/main.css"
   }
 }

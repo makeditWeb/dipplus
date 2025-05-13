@@ -1,9 +1,77 @@
 // Bootstrap 아이콘 가져오기
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css");
 
-body{
+body {
     background: #F9FAFF;
 }
+
+.content {
+    max-width: 1400px;
+    margin: 0 auto;
+
+    .sub-title {
+        font-weight: $font-bold;
+        font-size: 17px;
+    }
+
+    .form-container {
+        max-width: 100%;
+        padding: 50px;
+        margin: 20px 0 50px;
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+
+
+        .form-inner{
+            max-width: 630px;
+            margin: 0 auto;
+
+            .form-group {
+                margin-bottom: 1rem;
+                gap: 20px;
+                @include flex-center;
+    
+                label {
+                    display: block;
+                    font-weight: 600;
+                    font-size: 15px;
+                    color: #000;
+                    font-family: Paperlogy;
+                    flex: 1;
+                }
+    
+                .form-control {
+                    display: block;
+                    flex: 4;
+                    padding: 0.625rem 0.625rem;
+                    height: 36px;
+                    font-size: 14px;
+                    color: #000;
+                    border-radius: 5px;
+                    border: 1px solid #E0E4F1;
+                    background: #FFF;
+                    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    
+                    &:focus {
+                        color: #495057;
+                        background-color: #fff;
+                        border-color: #80bdff;
+                        outline: 0;
+                        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+                    }
+                }
+            }
+        }
+
+    }
+
+    button{
+        border-radius: 999px;
+        padding: 10px 50px;
+        margin: 0 auto;
+    }
+}
+
 
 .login-page-wrapper {
     background: #F9FAFF;
@@ -26,19 +94,21 @@ body{
             height: 800px;
         }
     }
+
+
+    // 왼쪽 배경 영역
+    .col-left {
+        width: 58%;
+
+    }
+
+    .col-right {
+        width: 42%;
+
+    }
+
 }
 
-
-// 왼쪽 배경 영역
-.col-left {
-    width: 58%;
-
-}
-
-.col-right {
-    width: 42%;
-
-}
 
 
 // 로그인 폼 영역
@@ -232,7 +302,7 @@ header {
     background-color: #FFF;
     border-bottom: 1px solid #E6E6E6;
     height: 50px;
-    
+
 
     .nav-menu {
         @include flex-center;
@@ -260,6 +330,7 @@ header {
                 &.active {
                     color: $blue--color;
                     position: relative;
+
                     &::after {
                         content: '';
                         position: absolute;
@@ -294,7 +365,7 @@ header {
         flex-direction: column;
         position: relative;
         height: 100%;
-        
+
         .dropdown-content {
             position: absolute;
             top: 0;
@@ -303,10 +374,10 @@ header {
             flex-direction: column;
             height: 100%;
             justify-content: center;
-            
+
             .dropdown-link {
                 display: block;
-                padding:4px 10px;
+                padding: 4px 10px;
                 height: 30px;
                 box-sizing: border-box;
                 text-decoration: none;
@@ -331,8 +402,189 @@ header {
     }
 }
 
+.mobile-menu-btn,
+.mobile-home-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
 
-.page-title{
+.side_menu-container {}
+
+// 모바일 사이드 메뉴 (기본적으로 화면 밖에 위치)
+.mobile-side-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    height: 60vh;
+    background-color: #fff;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &.active {
+        left: 0;
+    }
+
+    .side-menu-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        border-bottom: 1px solid #eeeeee;
+
+        .close-btn {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            // padding: 5px;
+        }
+
+        .side-logo {
+            img {
+                height: 30px;
+            }
+        }
+
+        .user-menu {
+            display: flex;
+            gap: 15px;
+
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+
+    .side-menu-content {
+        // padding: 15px;
+
+        .accordion-menu {
+            .accordion-item {
+                border-bottom: 1px solid #eeeeee;
+
+                .accordion-header {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+                    background: transparent;
+                    border: none;
+                    padding: 10px 20px 12px;
+                    font-size: 15px;
+                    color: #000;
+                    font-weight: $font-medium;
+                    text-align: left;
+
+
+                    cursor: pointer;
+
+                    &.active {
+                        color: #fff;
+                        background: $blue--color;
+
+                        .accordion-icon {
+                            transform: rotate(180deg);
+                        }
+                    }
+
+                    .accordion-icon {
+                        transition: transform 0.3s ease;
+                    }
+                }
+
+                .accordion-content {
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height 0.3s ease;
+                    padding: 0;
+                    background: #F2F2F2;
+
+                    a {
+                        display: block;
+                        padding: 10px 10px 12px 20px;
+                        color: #000;
+                        font-size: 15px;
+                        text-decoration: none;
+                        font-weight: $font-medium;
+                        border-bottom: 1px solid #E9E9E9;
+
+                        &:hover,
+                        &.active {
+                            color: $blue--color;
+                            font-weight: $font-bold;
+                        }
+
+                        &:last-child {
+                            border-bottom: none;
+                        }
+                    }
+                }
+
+
+            }
+        }
+
+
+    }
+
+    .logout-btn {
+        margin-top: 30px;
+        text-align: center;
+        border-top: 1px solid #E9E9E9;
+        background: #EFF2F9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+        width: 100%;
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: #768EB4;
+            font-family: Paperlogy;
+            font-size: 15px;
+            font-weight: $font-medium;
+            text-decoration: none;
+            padding: 10px;
+            width: 100%;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+// 모바일 메뉴 오버레이
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
+
+.page-title {
     font-size: 35px;
     font-weight: $font-black;
     color: #000;
