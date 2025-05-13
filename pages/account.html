@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIPPLUS</title>
+
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <div class="nav__inner">
+            <a href="../index.html" class="nav__logo-link">
+                <img src="../assets/images/logo.svg" alt="DIPPLUS Logo" class="nav__logo-img">
+            </a>
+
+            <ul class="nav__menu">
+                <li class="nav__menu-item">
+                    <a href="#none" class="nav__menu-link">
+                        <img src="../assets/images/home.svg"> 
+                        Conference Home
+                    </a>
+                </li>
+                <li class="nav__menu-item"><a href="#none" class="nav__menu-link">
+                    <img src="../assets/images/login_icon.svg">Login</a></li>
+                <!-- <li class="nav__menu-item"><a href="#none" class="nav__menu-link">
+                    <img src="../assets/images/user.svg"> My Page</a></li> -->
+            </ul>
+            
+        </div>
+    </header>
+    
+    <!-- page title -->
+
+    <h1 class="page-title">Create Account</h1>
+
+    <!-- CONTENT -->
+    <section class="content account">
+        <h3 class="form__title">Privacy Policy</h3>
+        <div class="policy_container">
+            <div class="policy__wrapp">
+                <h4 class="policy__title">Table of Contents</h4>
+                <div class="policy__content_wrapp d-flex">
+                    <div class="policy__content half">
+                        1. Purpose of Collection and Use of Personal Information<br>
+                        2. Range of Personal Information<br>
+                        3. Maintenance and Disuse of Personal Information<br>
+                        4. Range of Cookie Use5. Security Management for Personal information
+                    </div>
+                    <div class="policy__content half">
+                        6. Data Usage Policy<Br>
+                        7. Children<Br>
+                        8. Changes and Updates to this Privacy Policy<Br>
+                        9. Responsibility for Security Breach
+                    </div>
+                </div>
+
+                <p class="policy_all">
+                    This "Privacy Policy" explains the collection, use, and disclosure of "personal information" by IMID 2025 organizing committee, through the Website that the secretariat of IMID 2025 operates at <a href="https://imid2025.genimice.com" target="_blank">https://imid2025.genimice.com</a>. In accordance to the Information Network Promotion Law revised in September 30, 2011 and legislated to prevent the misuse and abuse of personal information on the Internet, this Privacy Policy also explains our commitment to you with respect to our use and disclosure of the personal information that the organizing committee of IMID 2025 collects from its members. That commitment is contained in a "Data Usage Policy," below. As used in this policy, "personal information" means information that would allow a party to identify you such as, for example, your name, address or location or email address. The organizing committee of IMID 2025 collects membership information in order to provide better services to its users. By accessing as your ID, you are accepting and agreeing to the practices described in this Privacy Policy.
+                </p>
+            </div>
+        </div>
+
+        <div class="policy_check">
+            <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes">
+  
+            <label for="wp-comment-cookies-consent">This is the minimum personal information necessary for IMID 2025 service provider. I acknowledge that I have read and agree to the Privacy Policy. </label>
+    
+        </div>
+
+        <h3 class="form__title">Sign Up</h3>
+        <form>
+            <div class="form-container">
+                <div class="form-inner">
+                    <!-- ID (Email) field with custom email structure -->
+                    <div class="form-group">
+                        <label for="email">ID (E-mail)<span class="required">*</span></label>
+                        <div class="email-field">
+                            <input type="text" id="email-username" class="email-part" placeholder="takion90">
+                            <span class="email-separator">@</span>
+                            <input type="text" id="email-domain" class="email-part" value="gmail.com" readonly>
+                            <div class="select-wrapper">
+                                <select id="email-domain-select" class="form-select">
+                                    <option>Other</option>
+                                    <option selected>gmail.com</option>
+                                    <option>naver.com</option>
+                                    <option>hotmail.com</option>
+                                </select>
+                            </div>
+                            <div class="id-check">
+                                <input type="checkbox" id="id-check" checked>
+                                <label for="id-check" class="check-label">ID Check</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-helper-text">
+                        Please make sure to enter a valid e-mail address as it will be your future contact point. And, kindly note that once your ID has been confirmed, you cannot modify it.
+                    </div>
+    
+                    <!-- Password fields -->
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="password">Password<span class="required">*</span></label>
+                            <input type="password" id="password" class="form-control">
+                        </div>
+                        <div class="form-group half">
+                            <label for="confirm-password">Confirm Password<span class="required">*</span></label>
+                            <input type="password" id="confirm-password" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-helper-text right">
+                        Your Password can be any letters or numbers and must contain at least 6 characters.
+                    </div>
+                </div>
+            </div>
+    
+            <h3 class="form__title">Personal Information</h3>
+            <div class="form-container">
+                <div class="form-inner">
+                    <!-- Title and Country -->
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="title">Title<span class="required">*</span></label>
+                            <div class="select-wrapper">
+                                <select id="title" class="form-select" required>
+                                    <option value="" disabled selected hidden>Prof.</option>
+                                    <option value="Prof.">Prof.</option>
+                                    <option value="Dr.">Dr.</option>
+                                    <option value="Mr.">Mr.</option>
+                                    <option value="Ms.">Ms.</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group half">
+                            <label for="country">Country<span class="required">*</span></label>
+                            <div class="select-wrapper">
+                                <select id="country" class="form-select" required>
+                                    <option value="" disabled selected hidden>Select Country</option>
+                                    <option value="South Korea">South Korea</option>
+                                    <option value="United States">United States</option>
+                                    <option value="Japan">Japan</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- First Name and Last Name -->
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="firstName">First(Given) Name<span class="required">*</span></label>
+                            <input type="text" id="firstName" class="form-control">
+                        </div>
+                        <div class="form-group half">
+                            <label for="lastName">Last(Family) Name<span class="required">*</span></label>
+                            <input type="text" id="lastName" class="form-control">
+                        </div>
+                    </div>
+    
+                    <!-- Affiliation and Department -->
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="affiliation">Affiliation<span class="required">*</span></label>
+                            <input type="text" id="affiliation" class="form-control">
+                        </div>
+                        <div class="form-group half">
+                            <label for="department">Department<span class="required">*</span></label>
+                            <input type="text" id="department" class="form-control">
+                        </div>
+                    </div>
+    
+                    <!-- Address -->
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" class="form-control">
+                    </div>
+    
+                    <!-- Phone Number -->
+                    <div class="form-group phone">
+                        <label for="phone">Phone Number (Affiliation Number)</label>
+                        <div class="phone-field">
+                            <input type="text" id="phone-country" class="phone-part" value="+82" readonly>
+                            <input type="text" id="phone" class="form-control">
+                        </div>
+                        <div class="form-helper-text phone-helper">
+                            (ex. +Country Code-Area Code-Phone Number / +82-042-123-1234)
+                        </div>
+                    </div>
+    
+                    <!-- Mobile Number -->
+                    <div class="form-group phone">
+                        <label for="mobile">Mobile Number (Cellphone Number)<span class="required">*</span></label>
+                        <div class="phone-field">
+                            <input type="text" id="mobile-country" class="phone-part" value="+82" readonly>
+                            <input type="text" id="mobile1" class="form-control">
+                            <input type="text" id="mobile2" class="form-control">
+                            <input type="text" id="mobile3" class="form-control">
+                        </div>
+                        <div class="form-helper-text phone-helper">
+                            (ex. +Country Code-Area Code-Phone Number / +82-042-123-1234)
+                        </div>
+                    </div>
+    
+                    <!-- Dietary Requirement -->
+                    <div class="form-group phone">
+                        <label for="dietary">Dietary Requirement<span class="required">*</span></label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="dietary-none" name="dietary" checked>
+                                <label for="dietary-none">None</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="dietary-vegetarian" name="dietary">
+                                <label for="dietary-vegetarian">Vegetarian</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="dietary-other" name="dietary">
+                                <label for="dietary-other">Other</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <button type="button" class="btn btn-primary d-flex">Submit</button>
+        </form>
+    </section>
+
+
+    <!-- footer -->
+    <footer>
+        <div class="footer__inner">
+        </div>
+    </footer>
+
+    <script src="../assets/js/common.js"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const selects = document.querySelectorAll('.form-select');
+        
+        selects.forEach(select => {
+            // 초기 스타일 적용
+            if (select.options[select.selectedIndex].disabled) {
+                select.style.color = '#AAB2C8'; // 플레이스홀더 색상
+            } else {
+                select.style.color = '#000'; // 일반 텍스트 색상
+            }
+            
+            // 선택 변경 이벤트
+            select.addEventListener('change', function() {
+                // 선택 후 색상 변경
+                this.style.color = '#000';
+            });
+        });
+    });
+    </script>
+</body>
+</html>
