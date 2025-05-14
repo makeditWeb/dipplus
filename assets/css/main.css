@@ -11255,7 +11255,8 @@ header .nav__inner .nav__menu .nav__menu-item a {
     padding: 40px 0 30px;
   }
   .content {
-    padding: 0 15px;
+    padding: 0 20px;
+    margin-bottom: 50px;
   }
   .content .sub-title {
     font-size: 14px;
@@ -11278,6 +11279,33 @@ header .nav__inner .nav__menu .nav__menu-item a {
   }
   .content .form-container .form-inner .form-group .form-control {
     width: 100%;
+  }
+  .policy_container {
+    padding: 20px 30px;
+  }
+  .policy_container .policy__content_wrapp {
+    flex-direction: column;
+  }
+  .policy_container .policy__content_wrapp .policy__content.half {
+    width: 100%;
+  }
+  .email-field {
+    flex-wrap: wrap;
+  }
+  .form-helper-text {
+    padding-left: 0;
+  }
+  .form-row {
+    flex-direction: column;
+  }
+  .form-helper-text.right {
+    text-align: left;
+  }
+  .content.account .form-container .form-inner .form-group {
+    gap: 10px;
+  }
+  .policy_check label {
+    width: calc(100% - 35px);
   }
 }
 

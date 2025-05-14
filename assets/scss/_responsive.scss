@@ -411,7 +411,8 @@
     
     // 콘텐츠 영역 스타일 조정
     .content {
-        padding: 0 15px;
+        padding: 0 20px;
+        margin-bottom: 50px;
 
         .sub-title{
             font-size: 14px ;
@@ -444,6 +445,44 @@
             
             
         }
+    }
+
+    .policy_container{
+        padding: 20px 30px;
+
+        .policy__content_wrapp {
+            flex-direction: column;
+
+            .policy__content{
+                &.half{
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .email-field{
+        flex-wrap: wrap;
+    }
+
+    .form-helper-text{
+        padding-left: 0;
+    }
+
+    .form-row{
+        flex-direction: column;
+    }
+
+    .form-helper-text.right{
+        text-align: left;
+    }
+
+    .content.account .form-container .form-inner .form-group{
+        gap: 10px;
+    }
+
+    .policy_check label{
+        width: calc(100% - 35px);
     }
 }
 
