@@ -224,6 +224,78 @@ body {
     }
 
 
+    &.list-page {
+
+
+        .paper-details {
+            width: 100%;
+
+            border-radius: 50px;
+            background: #FFF;
+            box-shadow: 4px 4px 4px 0px rgba(222, 225, 238, 0.25);
+            padding: 60px 70px;
+
+
+            .paper-details-wrapp{
+                position: relative;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    transform: translate(0,-50%);
+                    left: 220px; // Adjust based on your label width
+                    height: 90%;
+                    width: 1px;
+                    background-color: #e0e0e0;
+                    z-index: 1;
+                }
+            }
+            
+
+            .paper-row {
+                display: flex;
+                padding: 15px 0;
+                gap: 20px;
+
+                .paper-label {
+                    width: 200px;
+                    min-width: 200px;
+                    font-weight: $font-semibold;
+                    color: #000;
+                    font-size:16px;
+                }
+
+                .paper-value {
+                    flex: 1;
+                    color: #000;
+                    padding-left: 20px;
+                    font-size:16px;
+                    font-weight: $font-regular;
+
+                    .file-link {
+                        display: inline-flex;
+                        padding: 6px 12px;
+                        border-radius: 999px;
+                        background: #ECF6FE;
+                        color: #0066cc;
+                        text-decoration: none;
+                        min-width: 60px;
+                        font-size: 12px;
+                        font-weight: $font-bold;
+
+
+                        .file-icon {
+                            margin-right: 5px;
+                        }
+
+                        &:hover {
+                            background-color: #e5f0ff;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 
@@ -852,16 +924,17 @@ header {
         line-height: 1.5;
         display: flex;
         align-items: center;
+
         option {
-            color: #000; 
+            color: #000;
         }
-        
+
         option[disabled] {
-            display: none; 
+            display: none;
         }
     }
 
-    
+
 }
 
 // Phone field styling

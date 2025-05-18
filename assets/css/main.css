@@ -10264,6 +10264,63 @@ body {
   color: #0363FF;
   font-weight: 600;
 }
+.content.list-page .paper-details {
+  width: 100%;
+  border-radius: 50px;
+  background: #FFF;
+  box-shadow: 4px 4px 4px 0px rgba(222, 225, 238, 0.25);
+  padding: 60px 70px;
+}
+.content.list-page .paper-details .paper-details-wrapp {
+  position: relative;
+}
+.content.list-page .paper-details .paper-details-wrapp:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: 220px;
+  height: 90%;
+  width: 1px;
+  background-color: #e0e0e0;
+  z-index: 1;
+}
+.content.list-page .paper-details .paper-row {
+  display: flex;
+  padding: 15px 0;
+  gap: 20px;
+}
+.content.list-page .paper-details .paper-row .paper-label {
+  width: 200px;
+  min-width: 200px;
+  font-weight: 600;
+  color: #000;
+  font-size: 16px;
+}
+.content.list-page .paper-details .paper-row .paper-value {
+  flex: 1;
+  color: #000;
+  padding-left: 20px;
+  font-size: 16px;
+  font-weight: 400;
+}
+.content.list-page .paper-details .paper-row .paper-value .file-link {
+  display: inline-flex;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #ECF6FE;
+  color: #0066cc;
+  text-decoration: none;
+  min-width: 60px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.content.list-page .paper-details .paper-row .paper-value .file-link .file-icon {
+  margin-right: 5px;
+}
+.content.list-page .paper-details .paper-row .paper-value .file-link:hover {
+  background-color: #e5f0ff;
+}
 
 .login-page-wrapper {
   background: #F9FAFF;
@@ -11279,6 +11336,31 @@ header .nav__inner .nav__menu .nav__menu-item a {
   }
   .content .form-container .form-inner .form-group .form-control {
     width: 100%;
+  }
+  .content.list-page .paper-details {
+    padding: 40px;
+  }
+  .content.list-page .paper-details .paper-details-wrapp {
+    position: relative;
+  }
+  .content.list-page .paper-details .paper-details-wrapp:before {
+    display: none;
+  }
+  .content.list-page .paper-details .paper-row {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    gap: 10px;
+  }
+  .content.list-page .paper-details .paper-row .paper-label {
+    width: 100%;
+    min-width: 100%;
+    font-size: 14px;
+  }
+  .content.list-page .paper-details .paper-row .paper-value {
+    flex: unsest;
+    padding-left: 0;
+    font-size: 14px;
   }
   .policy_container {
     padding: 20px 30px;

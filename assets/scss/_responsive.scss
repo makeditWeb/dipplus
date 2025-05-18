@@ -445,6 +445,42 @@
             
             
         }
+
+        &.list-page {
+
+
+            .paper-details {
+                padding: 40px;
+
+
+                .paper-details-wrapp{
+                    position: relative;
+                    &:before {
+                        display: none;
+                    }
+                }
+                
+
+                .paper-row {
+                    display: flex;
+                    flex-direction: column;
+                    padding:10px 0;
+                    gap: 10px;
+
+                    .paper-label {
+                        width: 100%;
+                        min-width: 100%;
+                        font-size:14px;
+                    }
+
+                    .paper-value {
+                        flex: unsest;
+                        padding-left: 0;
+                        font-size:14px;
+                    }
+                }
+            }
+        }
     }
 
     .policy_container{
