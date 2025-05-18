@@ -109,6 +109,16 @@ a {
             border-color: darken($primary, 7.5%);
         }
     }
+
+    &.btn-secondary{
+        background-color: #7D90AE;
+        border: none;
+    }
+}
+
+.btn-area{
+    @include flex-center;
+    gap: 16px;
 }
 
 // 기본 마진 및 패딩 유틸리티

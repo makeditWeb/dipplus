@@ -1,47 +1,61 @@
 // 공통 JavaScript 코드 (기존 코드 + 모바일 메뉴)
 
 document.addEventListener('DOMContentLoaded', function() {
-    // ================ 기존 드롭다운 코드 ================
-    const paperSubmission = document.getElementById('paper-submission');
-    if (paperSubmission) {
-        paperSubmission.addEventListener('click', function(e) {
+    // ================ 수정된 드롭다운 코드 ================
+    // 모든 드롭다운 메뉴 아이템 선택
+    const navDropdowns = document.querySelectorAll('.nav-item.dropdown .nav-link');
+    
+    // 각 드롭다운 메뉴에 이벤트 리스너 추가
+    navDropdowns.forEach(dropdown => {
+        dropdown.addEventListener('click', function(e) {
             e.preventDefault();
-            const dropdown = document.getElementById('dropdown-container');
-            dropdown.classList.toggle('show');
-            this.classList.toggle('active');
+            
+            // 드롭다운 컨테이너
+            const dropdownContainer = document.getElementById('dropdown-container');
+            
+            // 드롭다운 토글
+            dropdownContainer.classList.toggle('show');
+            
+            // active 클래스 토글
+            const wasActive = this.classList.contains('active');
+            
+            // 모든 메뉴 항목의 active 상태 제거
+            navDropdowns.forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // 클릭한 메뉴가 active가 아니었다면 active 추가
+            if (!wasActive) {
+                this.classList.add('active');
+            }
+            
+            // 모든 드롭다운 콘텐츠 표시
+            const dropdownContents = document.querySelectorAll('.dropdown-content');
+            dropdownContents.forEach(content => {
+                content.style.display = 'flex';
+            });
+            
+            // 드롭다운이 열려있지 않으면 active 상태 모두 제거
+            if (!dropdownContainer.classList.contains('show')) {
+                navDropdowns.forEach(item => {
+                    item.classList.remove('active');
+                });
+            }
         });
-    }
+    });
 
     // Close dropdown when clicking outside
     window.addEventListener('click', function(e) {
-        if (!e.target.matches('#paper-submission')) {
+        if (!e.target.closest('.nav-item.dropdown')) {
             const dropdown = document.getElementById('dropdown-container');
             if (dropdown && dropdown.classList.contains('show')) {
                 dropdown.classList.remove('show');
-                const paperSubmission = document.getElementById('paper-submission');
-                if (paperSubmission) {
-                    paperSubmission.classList.remove('active');
-                }
+                // 모든 드롭다운 메뉴의 active 상태 제거
+                navDropdowns.forEach(item => {
+                    item.classList.remove('active');
+                });
             }
         }
-    });
-
-    // Set active state for menu items
-    const navLinks = document.querySelectorAll('.nav-link:not(#paper-submission)');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            // Remove active class from all links
-            document.querySelectorAll('.nav-link').forEach(el => {
-                el.classList.remove('active');
-            });
-            // Add active class to clicked link
-            this.classList.add('active');
-            // Hide dropdown if open
-            const dropdown = document.getElementById('dropdown-container');
-            if (dropdown) {
-                dropdown.classList.remove('show');
-            }
-        });
     });
 
     // 드롭다운 링크에 active 상태 추가
@@ -127,4 +141,25 @@ document.addEventListener('DOMContentLoaded', function() {
             closeMobileMenu();
         }
     });
+});
+document.addEventListener('DOMContentLoaded', function() {
+  const browseBtn = document.querySelector('.btn-browse');
+  const fileInput = document.getElementById('paperFile');
+  const fileNameDisplay = document.querySelector('.file-name-display');
+  
+  if (browseBtn && fileInput && fileNameDisplay) {
+    // Browse 버튼 클릭 시 파일 선택 창 열기
+    browseBtn.addEventListener('click', function() {
+      fileInput.click();
+    });
+    
+    // 파일 선택 시 파일명 표시
+    fileInput.addEventListener('change', function() {
+      if (this.files.length > 0) {
+        fileNameDisplay.value = this.files[0].name;
+      } else {
+        fileNameDisplay.value = '';
+      }
+    });
+  }
 });

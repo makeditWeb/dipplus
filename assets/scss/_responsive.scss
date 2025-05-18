@@ -81,7 +81,7 @@
         width: 100%;
         background-color: #FFF;
         border-bottom: 1px solid #E6E6E6;
-        height: 50px;
+        height: 80px;
     
     
         .nav-menu {
@@ -89,17 +89,20 @@
             list-style: none;
             max-width: 100%;
             padding: 0 50px;
+            height: 100%;
     
     
             .nav-item {
                 position: relative;
                 flex: none;
                 text-align: center;
-    
+                width: 25%;
+                height: 100%;
                 .nav-link {
-                    display: block;
+                    @include flex-center;
                     padding: 15px 0;
                     font-size: 14px;
+                    height: 100%;
                 }
             }
         }
@@ -113,7 +116,7 @@
             box-shadow: 0px 4px 10px 0px rgba(222, 225, 238, 0.25);
             z-index: 10;
             display: none;
-            height: 85px;
+            height: 95px;
         }
     
         // 드롭다운 내용물 - 메인 메뉴와 동일한 max-width 유지
@@ -122,8 +125,6 @@
             padding: 0 50px;
     
             .dropdown-content {
-                position: absolute;
-                top: 0;
                 width: 25%; // 4개 메뉴 중 첫 번째(25%)에 위치
                 display: flex;
                 flex-direction: column;
@@ -439,10 +440,41 @@
                     .form-control{
                         width: 100%;
                     }
+
+                    &:last-child{
+                        margin-bottom: 0;
+                    }
+
+
+                }
+            }
+
+            &.infomation{
+                .form-inner{
+                    .form-group {
+                        .editor__group{
+                            width: 100%;
+                            .editor-footer{
+                                align-items: flex-start;
+                                flex-direction: column;
+                            }
+                        }
+
+                        .radio-group{
+                            width: 100%;
+                            align-items: flex-start;
+                            flex-direction: column;
+                            gap: 10px;
+                        }
+
+                        .select--group{
+                            width: 100%;
+                        }
+                    }
                 }
             }
     
-            
+
             
         }
 
@@ -507,6 +539,7 @@
 
     .form-row{
         flex-direction: column;
+        gap: 0;
     }
 
     .form-helper-text.right{
@@ -520,6 +553,8 @@
     .policy_check label{
         width: calc(100% - 35px);
     }
+
+
 }
 
 

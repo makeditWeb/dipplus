@@ -5,6 +5,88 @@ body {
     background: #F9FAFF;
 }
 
+.btn-browse {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; // 아이콘과 텍스트 사이 간격
+    padding: 10px 20px;
+    border: none;
+    border-radius: 999px;
+    background: #ECF6FE;
+    color: #0363FF;
+    text-align: center;
+    font-family: Paperlogy;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    // 아이콘 스타일
+    .icon-folder {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background-image: url('path-to-folder-icon.svg'); // 폴더 아이콘 경로
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+
+    // 마우스 오버 효과
+    &:hover {
+        background: #D5ECFE;
+    }
+
+    // 클릭 효과
+    &:active {
+        background: #C0E2FE;
+    }
+
+    // 버튼 비활성화 스타일
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    // 크기 변형
+    &.btn-browse-sm {
+        padding: 6px 15px;
+        font-size: 11px;
+
+        .icon-folder {
+            width: 18px;
+            height: 18px;
+        }
+    }
+
+    &.btn-browse-lg {
+        padding: 12px 25px;
+        font-size: 14px;
+
+        .icon-folder {
+            width: 28px;
+            height: 28px;
+        }
+    }
+
+    // 아이콘 없는 버전
+    &.btn-browse-text-only {
+        .icon-folder {
+            display: none;
+        }
+    }
+
+    // 아이콘만 있는 버전
+    &.btn-browse-icon-only {
+        padding: 10px;
+
+        span:not(.icon-folder) {
+            display: none;
+        }
+    }
+}
+
 .content {
     max-width: 1400px;
     margin: 0 auto 100px;
@@ -20,6 +102,7 @@ body {
         margin: 20px 0 50px;
         border-top: 1px solid #000;
         border-bottom: 1px solid #000;
+
 
 
         .form-inner {
@@ -43,7 +126,7 @@ body {
 
                 .form-control {
                     display: block;
-                    flex: 4;
+                    flex: 3;
                     padding: 0.625rem 0.625rem;
                     height: 36px;
                     font-size: 14px;
@@ -64,12 +147,197 @@ body {
             }
         }
 
+        &.infomation {
+            .form-inner {
+                .form-group {
+                    margin-bottom: 1rem;
+                    justify-content: flex-start;
+                    margin-bottom: 30px !important;
+
+                    .radio-group{
+                        label{
+                            font-weight: $font-regular;
+                            font-size: 13px;
+                        }
+                    }
+                    label {
+                        display: block;
+                        font-weight: 600;
+                        font-size: 15px;
+                        color: #000;
+                        font-family: Paperlogy;
+                        flex: unset;
+                        width: 280px;
+                    }
+
+                    .form-control {
+                        display: block;
+                        flex: 4;
+                        padding: 0.625rem 0.625rem;
+                        height: 36px;
+                        font-size: 14px;
+                        color: #000;
+                        border-radius: 5px;
+                        border: 1px solid #E0E4F1;
+                        background: #FFF;
+                        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+                        &:focus {
+                            color: #495057;
+                            background-color: #fff;
+                            border-color: #80bdff;
+                            outline: 0;
+                            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+                        }
+                    }
+
+                    .radio-group {
+                        width: calc((100% - 280px));
+                        flex: unset;
+
+                        label {
+                            width: auto;
+                        }
+                    }
+
+                    .select--group {
+                        width: calc((100% - 280px));
+                        display: flex;
+                        align-items: center;
+                        gap: 20px;
+
+                        .select-wrapper {
+                            flex: 2;
+                        }
+
+                        .topic-description {
+                            flex: 1;
+                        }
+                    }
+
+                    .editor__group {
+                        position: relative;
+                        width: calc((100% - 280px));
+
+                        .editor-footer {
+                            @include flex-between;
+                            margin-top: 5px;
+
+                            .form-helper-text {
+                                padding-left: 0;
+                                font-size: 12px;
+                                margin-bottom: 0;
+                            }
+
+                            .word-count {
+                                font-size: 12px;
+                                font-weight: $font-medium;
+                            }
+                        }
+
+                        .ql-container {
+                            height: 150px;
+                            font-size: 14px;
+                            font-family: Arial, sans-serif;
+                        }
+
+                        .ql-editor {
+                            background-color: #fff;
+                        }
+
+                        #summaryEditor .ql-container {
+                            height: 200px;
+                        }
+
+                        /* 에디터 툴바 스타일 */
+                        .ql-toolbar {
+                            border-top-left-radius: 5px;
+                            border-top-right-radius: 5px;
+                            background-color: #f8f9fa;
+                        }
+
+                        .ql-container {
+                            border-bottom-left-radius: 5px;
+                            border-bottom-right-radius: 5px;
+                        }
+
+                        /* 워드 카운트 스타일 */
+                        .editor-footer {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            width: 100%;
+                            margin-top: 5px;
+                        }
+
+                        .word-count {
+                            font-size: 12px;
+                            color: #6c757d;
+                            text-align: right;
+                        }
+
+                        .word-count-exceeded {
+                            color: #d9534f !important;
+                            font-weight: bold;
+                        }
+                    }
+
+                    .file-upload-container {
+                        display: flex;
+                        align-items: stretch;
+                        gap: 10px;
+                        width: 100%;
+                        flex: 4;
+                    }
+
+                    // 파일 이름 표시 인풋
+                    .file-input-wrapper {
+                        flex: 2;
+
+                        .file-name-display {
+                            width: 100%;
+                            height: 100%;
+                            padding: 8px 15px;
+                            border: 1px solid #E0E4F1;
+                            border-radius: 5px;
+                            background: #FFF;
+                            font-size: 14px;
+                            color: #000;
+
+                            &::placeholder {
+                                color: #AAB2C8;
+                            }
+
+                            &:focus {
+                                outline: none;
+                                border-color: #80bdff;
+                                box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+                            }
+                        }
+                    }
+
+                    .browse-btn-wrapper {
+                        flex: 1;
+                    }
+
+                }
+            }
+        }
+
+
+
     }
 
     button {
         border-radius: 999px;
         padding: 10px 50px;
         margin: 0 auto;
+    }
+
+    .btn-area{
+        button{
+            margin: 0;
+        }
     }
 
 
@@ -236,13 +504,14 @@ body {
             padding: 60px 70px;
 
 
-            .paper-details-wrapp{
+            .paper-details-wrapp {
                 position: relative;
+
                 &:before {
                     content: '';
                     position: absolute;
                     top: 50%;
-                    transform: translate(0,-50%);
+                    transform: translate(0, -50%);
                     left: 220px; // Adjust based on your label width
                     height: 90%;
                     width: 1px;
@@ -250,7 +519,7 @@ body {
                     z-index: 1;
                 }
             }
-            
+
 
             .paper-row {
                 display: flex;
@@ -262,14 +531,14 @@ body {
                     min-width: 200px;
                     font-weight: $font-semibold;
                     color: #000;
-                    font-size:16px;
+                    font-size: 16px;
                 }
 
                 .paper-value {
                     flex: 1;
                     color: #000;
                     padding-left: 20px;
-                    font-size:16px;
+                    font-size: 16px;
                     font-weight: $font-regular;
 
                     .file-link {
@@ -294,6 +563,246 @@ body {
                     }
                 }
             }
+        }
+    }
+
+    &.insert {
+        .form-container {
+            max-width: 100%;
+            padding: 40px 0;
+            margin-bottom: 40px;
+            border-top: 1px solid #000;
+            border-bottom: 1px solid #000;
+
+            .form-inner {
+                max-width: 100%;
+
+                .email-field {
+                    flex: 4;
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                }
+            }
+
+            &.author {
+                .authors-table {
+                    width: 100%;
+                    overflow-x: auto;
+
+
+                    table {
+                        width: 100%;
+                        border-collapse: collapse;
+
+                        thead {
+                            tr {
+
+
+                                th {
+                                    padding: 10px 8px;
+                                    font-size: 14px;
+                                    font-weight: 600;
+                                    color: #000;
+                                    text-align: center;
+                                    white-space: nowrap;
+
+                                    &:first-child,
+                                    &:nth-child(2) {
+                                        width: 80px;
+                                        text-align: center;
+                                    }
+
+                                    &:nth-child(3) {
+                                        width: 40px;
+                                        text-align: center;
+                                    }
+                                }
+                            }
+                        }
+
+                        tbody {
+                            tr {
+
+                                td {
+                                    padding: 10px 8px;
+                                    font-size: 14px;
+                                    vertical-align: middle;
+
+                                    &:first-child,
+                                    &:nth-child(2) {
+                                        text-align: center;
+                                    }
+
+                                    &:nth-child(3) {
+                                        text-align: center;
+                                        font-weight: 500;
+                                    }
+
+                                    .form-control,
+                                    .select-wrapper {
+                                        width: 100%;
+                                        min-width: 100px;
+                                    }
+
+                                    .form-control {
+                                        padding: 8px 10px;
+                                        height: 36px;
+                                        font-size: 14px;
+                                        border-radius: 5px;
+                                        border: 1px solid #E0E4F1;
+
+                                        &:focus {
+                                            border-color: #80bdff;
+                                            outline: 0;
+                                            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+
+                .checkbox-wrapper {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    input[type=checkbox] {
+                        position: relative;
+                        border: 1px solid #9b9b9b;
+                        border-radius: 3px;
+                        background: #fff;
+                        cursor: pointer;
+                        line-height: 0;
+                        outline: 0;
+                        padding: 0 !important;
+                        height: 18px;
+                        width: 18px;
+                        -webkit-appearance: none;
+                        appearance: none;
+
+                        &:checked {
+                            background-color: #0363FF;
+                            border: none;
+                        }
+
+                        &:checked:after {
+                            content: '';
+                            position: absolute;
+                            left: 4px;
+                            top: 4px;
+                            width: 10px;
+                            height: 10px;
+                            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E");
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                        }
+                    }
+                }
+
+                .form-helper-text {
+                    padding-left: 0;
+                    font-size: 12px;
+                    margin-bottom: 0;
+                }
+
+                .select--group {
+                    flex: 3;
+                }
+
+            }
+        }
+    }
+
+    .title__contain {
+        @include flex-start;
+        margin-bottom: 20px;
+        gap: 16px;
+
+        // 제목 스타일은 기존 코드 유지
+        .form__title {
+            color: #0363FF;
+            font-family: Paperlogy;
+            font-size: 20px;
+            font-weight: 800;
+            position: relative;
+            padding-left: 10px;
+            margin-bottom: 0; // 기존 마진 제거
+
+            &::before {
+                position: absolute;
+                content: '';
+                width: 4px;
+                border-radius: 2px;
+                height: 80%;
+                background-color: #0363FF;
+                left: 0;
+                top: 50%;
+                transform: translate(0, -50%);
+            }
+        }
+
+        // 템플릿 다운로드 버튼
+        .btn-template-download {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            border-radius: 999px;
+            border: 1px solid #0363FF;
+            background-color: #fff;
+            color: #0363FF;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+
+            // 다운로드 아이콘
+            .download-icon {
+                margin-right: 8px;
+            }
+
+            // 호버 효과
+            &:hover {
+                background-color: #f0f7ff;
+            }
+
+            // 클릭 효과
+            &:active {
+                background-color: #e1efff;
+            }
+        }
+
+        // 반응형 스타일
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+
+            .form__title {
+                margin-bottom: 0;
+            }
+
+            .btn-template-download {
+                align-self: flex-start;
+            }
+        }
+    }
+
+    .corresponding-question-box{
+        .question-wrapper {
+            gap: 20px;
+            margin-bottom: 10px;
+            .question-text{
+                font-size: 13px;
+                font-weight: $font-regular;
+            }
+        }
+        .info-text{
+            font-size: 13px;
+            font-weight: $font-regular;
         }
     }
 }
@@ -588,13 +1097,10 @@ header {
         max-width: 1400px;
         margin: 0 auto;
         display: flex;
-        flex-direction: column;
         position: relative;
         height: 100%;
 
         .dropdown-content {
-            position: absolute;
-            top: 0;
             width: 25%; // 4개 메뉴 중 첫 번째(25%)에 위치
             display: flex;
             flex-direction: column;
@@ -841,9 +1347,6 @@ header {
     }
 }
 
-// Add these additional styles to your existing SCSS
-
-// Form layout and components
 .form-row {
     display: flex;
     gap: 20px;
@@ -886,10 +1389,7 @@ header {
     }
 }
 
-// Email field specific styling
 
-
-// Select styling
 .select-wrapper {
     position: relative;
     width: 100%;
@@ -954,6 +1454,11 @@ header {
         border: 1px solid #E0E4F1;
         background: #FFF;
         text-align: center;
+
+        &.phone-part-w100 {
+            width: 100px;
+            text-align: left;
+        }
     }
 }
 
@@ -977,8 +1482,8 @@ header {
         label {
             margin: 0;
             flex: unset;
-            font-weight: normal;
-            font-size: 14px;
+            font-weight: $font-regular;
+            font-size: 13px;
         }
     }
 }
