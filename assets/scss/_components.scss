@@ -994,36 +994,112 @@ body {
 // header
 
 header {
-    background: $blue--color;
+    background: #fff;
     padding: 15px 0;
     height: 100px;
     box-sizing: border-box;
+    border-bottom: 2px solid #0363FF;
 
     .nav__inner {
         max-width: 1400px;
         margin: 0 auto;
         @include flex-between;
 
+
+
         .nav__menu {
             @include flex-center;
             gap: 10px;
 
             .nav__menu-item {
-                color: #fff;
+                color: $blue--color;
                 font-size: 14px;
                 font-weight: 600;
                 @include flex-center;
                 gap: 6px;
                 border-radius: 999px;
-                border: 1.5px solid #FFF;
+                border: 1.5px solid $blue--color;
                 padding: 8px 20px;
 
                 a {
-                    color: #fff;
+                    color: $blue--color;
                     font-size: 14px;
                     font-weight: 600;
-                    @include flex-center;
+                    @include flex-between;
                     gap: 6px;
+                    width: 100%;
+                    p{
+                        @include flex-center;
+                        gap: 0.5rem;
+                    }
+                }
+
+                &--mypage {
+                    position: relative;
+                    background: transparent;
+                    transition: all 0.3s ease;
+                    min-width: 180px;
+
+                    &.mypage-active {
+                        background: #E3EDFD;
+                        border-color: $blue--color;
+
+                        .mypage-dropdown-arrow {
+                            transform: rotate(180deg);
+                        }
+                    }
+
+                    .mypage-dropdown-arrow {
+                        transition: transform 0.3s ease;
+                        margin-left: 4px;
+                    }
+
+                    // My Page 드롭다운 메뉴
+                    .mypage-dropdown-menu {
+                        position: absolute;
+                        top: calc(100% + 10px);
+                        right: 0;
+                        background: #E3EDFD;
+                        border-radius: 20px;
+                        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                        padding: 0;
+                        min-width: 180px;
+                        opacity: 0;
+                        visibility: hidden;
+                        transform: translateY(-10px);
+                        transition: all 0.3s ease;
+                        z-index: 1001; // nav 드롭다운보다 높은 z-index
+
+                        &.mypage-active {
+                            opacity: 1;
+                            visibility: visible;
+                            transform: translateY(0);
+                        }
+
+                        &__item {
+                            
+                            color: $blue--color;
+                            font-size: 12px;
+                            font-weight: 500;
+                            text-align: center;
+                            cursor: pointer;
+                            transition: background-color 0.2s ease;
+
+                            &:hover{
+                                background-color: #cddefa;
+                                // color: #fff;
+                            }
+                            &:first-child {
+                                border-radius: 12px 12px 0 0;
+                                padding: 12px 20px;
+                            }
+
+                            &:last-child {
+                                padding: 12px 20px;
+                                border-radius: 0 0 12px 12px;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -1034,8 +1110,7 @@ header {
 
 .nav-container {
     width: 100%;
-    background-color: #FFF;
-    border-bottom: 1px solid #E6E6E6;
+    background-color: $blue--color;
     height: 50px;
 
 
@@ -1057,24 +1132,24 @@ header {
                 text-decoration: none;
                 transition: all 0.3s ease;
                 position: relative;
-                color: #000;
+                color: #fff;
                 font-weight: $font-bold;
                 font-size: 15px;
 
                 &:hover,
                 &.active {
-                    color: $blue--color;
+                    color: #BCF0FF;
                     position: relative;
 
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        bottom: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 3px;
-                        background: $blue--color;
-                    }
+                    // &::after {
+                    //     content: '';
+                    //     position: absolute;
+                    //     bottom: 0;
+                    //     left: 0;
+                    //     width: 100%;
+                    //     height: 3px;
+                    //     background: $blue--color;
+                    // }
                 }
             }
         }

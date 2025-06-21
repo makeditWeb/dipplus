@@ -142,6 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
 document.addEventListener('DOMContentLoaded', function() {
   const browseBtn = document.querySelector('.btn-browse');
   const fileInput = document.getElementById('paperFile');
@@ -162,4 +163,80 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
+});
+
+
+// mypage 드롭다운
+// My Page 드롭다운 JavaScript (기존 JavaScript 파일 맨 아래에 추가)
+
+document.addEventListener('DOMContentLoaded', function() {
+    // My Page 드롭다운 요소들
+    const myPageDropdown = document.getElementById('myPageDropdown');
+    const myPageDropdownMenu = document.getElementById('myPageDropdownMenu');
+    const myPageDropdownOverlay = document.getElementById('myPageDropdownOverlay');
+
+    // My Page 클릭 이벤트
+    if (myPageDropdown) {
+        myPageDropdown.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleMyPageDropdown();
+        });
+    }
+
+    // My Page 드롭다운 메뉴 아이템 클릭 이벤트
+    const myPageDropdownItems = document.querySelectorAll('.mypage-dropdown-menu__item');
+    myPageDropdownItems.forEach(item => {
+        item.addEventListener('click', function() {
+            console.log('My Page Menu Clicked:', this.textContent);
+            closeMyPageDropdown();
+            // 여기에 각 메뉴 아이템에 대한 액션을 추가할 수 있습니다
+            // 예: 페이지 이동, 모달 열기 등
+        });
+    });
+
+    // My Page 오버레이 클릭시 드롭다운 닫기
+    if (myPageDropdownOverlay) {
+        myPageDropdownOverlay.addEventListener('click', closeMyPageDropdown);
+    }
+
+    // ESC 키로 My Page 드롭다운 닫기
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeMyPageDropdown();
+        }
+    });
+
+    // My Page 드롭다운 토글 함수
+    function toggleMyPageDropdown() {
+        const isActive = myPageDropdown && myPageDropdown.classList.contains('mypage-active');
+        
+        if (isActive) {
+            closeMyPageDropdown();
+        } else {
+            openMyPageDropdown();
+        }
+    }
+
+    // My Page 드롭다운 열기 함수
+    function openMyPageDropdown() {
+        if (myPageDropdown) myPageDropdown.classList.add('mypage-active');
+        if (myPageDropdownMenu) myPageDropdownMenu.classList.add('mypage-active');
+        if (myPageDropdownOverlay) myPageDropdownOverlay.classList.add('mypage-active');
+    }
+
+    // My Page 드롭다운 닫기 함수
+    function closeMyPageDropdown() {
+        if (myPageDropdown) myPageDropdown.classList.remove('mypage-active');
+        if (myPageDropdownMenu) myPageDropdownMenu.classList.remove('mypage-active');
+        if (myPageDropdownOverlay) myPageDropdownOverlay.classList.remove('mypage-active');
+    }
+
+    // 창 밖 클릭시 My Page 드롭다운 닫기 (기존 nav 드롭다운과 독립적으로 작동)
+    document.addEventListener('click', function(e) {
+        // My Page 드롭다운 영역이 아닌 곳을 클릭했을 때만 닫기
+        if (!e.target.closest('.nav__menu-item--mypage')) {
+            closeMyPageDropdown();
+        }
+    });
 });
