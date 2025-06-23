@@ -240,3 +240,103 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
+// Dietary Requirement 라디오 버튼 기능
+document.addEventListener('DOMContentLoaded', function() {
+    initDietaryRequirement();
+});
+
+function initDietaryRequirement() {
+    const radioButtons = document.querySelectorAll('input[name="dietary"]');
+    const otherInputContainer = document.getElementById('otherInputContainer');
+    const otherInput = document.getElementById('dietaryOtherText');
+
+    // 라디오 버튼이 없으면 함수 종료
+    if (!radioButtons.length || !otherInputContainer || !otherInput) {
+        return;
+    }
+
+    // 라디오 버튼 변경 이벤트
+    radioButtons.forEach(radio => {
+        radio.addEventListener('change', function() {
+            handleDietaryChange(this, otherInputContainer, otherInput);
+        });
+    });
+
+    // Other 입력 박스 이벤트
+    setupOtherInputEvents(otherInput);
+}
+
+function handleDietaryChange(selectedRadio, otherInputContainer, otherInput) {
+    if (selectedRadio.value === 'other' && selectedRadio.checked) {
+        // Other 선택 시 입력 박스 표시
+        showOtherInput(otherInputContainer, otherInput);
+    } else {
+        // 다른 옵션 선택 시 입력 박스 숨김
+        hideOtherInput(otherInputContainer, otherInput);
+    }
+}
+
+function showOtherInput(container, input) {
+    container.classList.add('show');
+    
+    // 애니메이션 후 포커스
+    setTimeout(() => {
+        input.focus();
+    }, 150);
+}
+
+function hideOtherInput(container, input) {
+    container.classList.remove('show');
+    input.value = ''; // 입력값 초기화
+    input.classList.remove('error'); // 에러 상태 제거
+}
+
+function setupOtherInputEvents(otherInput) {
+    // 입력 박스에서 벗어날 때 유효성 검사
+    otherInput.addEventListener('blur', function() {
+        validateOtherInput(this);
+    });
+
+    // 입력 시 에러 상태 제거
+    otherInput.addEventListener('input', function() {
+        if (this.classList.contains('error')) {
+            this.classList.remove('error');
+        }
+    });
+
+    // Enter 키 처리
+    otherInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            this.blur(); // 포커스 해제하여 유효성 검사 트리거
+        }
+    });
+}
+
+function validateOtherInput(input) {
+    const otherRadio = document.getElementById('dietary-other');
+    
+    if (otherRadio && otherRadio.checked && input.value.trim() === '') {
+        input.classList.add('error');
+        return false;
+    } else {
+        input.classList.remove('error');
+        return true;
+    }
+}
+
+// 폼 제출 시 유효성 검사 함수 (필요시 사용)
+function validateDietaryRequirement() {
+    const otherRadio = document.getElementById('dietary-other');
+    const otherInput = document.getElementById('dietaryOtherText');
+    
+    if (otherRadio && otherRadio.checked) {
+        return validateOtherInput(otherInput);
+    }
+    
+    return true;
+}
+
+// 전역 함수로 내보내기 (필요시)
+window.validateDietaryRequirement = validateDietaryRequirement;

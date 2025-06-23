@@ -87,42 +87,61 @@
                     <!-- ID (Email) field with custom email structure -->
                     <div class="form-group">
                         <label for="email">ID (E-mail)<span class="required">*</span></label>
-                        <div class="email-field">
-                            <input type="text" id="email-username" class="email-part" placeholder="takion90">
-                            <span class="email-separator">@</span>
-                            <input type="text" id="email-domain" class="email-part" value="gmail.com" readonly>
-                            <div class="select-wrapper">
-                                <select id="email-domain-select" class="form-select">
-                                    <option>Other</option>
-                                    <option selected>gmail.com</option>
-                                    <option>naver.com</option>
-                                    <option>hotmail.com</option>
-                                </select>
+                        <div class="sign-form">
+                            <div class="email-field">
+                                <div class="email-input-row">
+                                    <input type="text" id="email-username" class="email-part" placeholder="takion90">
+                                    <span class="email-separator">@</span>
+                                    <input type="text" id="email-domain" class="email-part" value="gmail.com" readonly>
+                                </div>
+                                
+                                <!-- 셀렉트 박스 -->
+                                <div class="select-wrapper">
+                                    <select class="form-select">
+                                        <option value="gmail.com">gmail.com</option>
+                                        <option value="naver.com">naver.com</option>
+                                        <option value="yahoo.com">yahoo.com</option>
+                                    </select>
+                                </div>
+                                
+                                <!-- ID 체크 -->
+                                <button type="button" class="id-check-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
+                                        <path d="M8.3125 8.1375C8.64599 7.84883 8.91347 7.4918 9.0968 7.09064C9.28012 6.68948 9.375 6.25357 9.375 5.8125C9.375 4.9837 9.04576 4.18884 8.45971 3.60279C7.87366 3.01674 7.0788 2.6875 6.25 2.6875C5.4212 2.6875 4.62634 3.01674 4.04029 3.60279C3.45424 4.18884 3.125 4.9837 3.125 5.8125C3.125 6.25357 3.21988 6.68948 3.4032 7.09064C3.58653 7.4918 3.85401 7.84883 4.1875 8.1375C3.31259 8.53368 2.57029 9.17346 2.04936 9.98034C1.52843 10.7872 1.25092 11.7271 1.25 12.6875C1.25 12.8533 1.31585 13.0122 1.43306 13.1294C1.55027 13.2467 1.70924 13.3125 1.875 13.3125C2.04076 13.3125 2.19973 13.2467 2.31694 13.1294C2.43415 13.0122 2.5 12.8533 2.5 12.6875C2.5 11.6929 2.89509 10.7391 3.59835 10.0358C4.30161 9.33259 5.25544 8.9375 6.25 8.9375C7.24456 8.9375 8.19839 9.33259 8.90165 10.0358C9.60491 10.7391 10 11.6929 10 12.6875C10 12.8533 10.0658 13.0122 10.1831 13.1294C10.3003 13.2467 10.4592 13.3125 10.625 13.3125C10.7908 13.3125 10.9497 13.2467 11.0669 13.1294C11.1842 13.0122 11.25 12.8533 11.25 12.6875C11.2491 11.7271 10.9716 10.7872 10.4506 9.98034C9.92971 9.17346 9.18741 8.53368 8.3125 8.1375V8.1375ZM6.25 7.6875C5.87916 7.6875 5.51665 7.57753 5.20831 7.37151C4.89996 7.16548 4.65964 6.87264 4.51773 6.53003C4.37581 6.18742 4.33868 5.81042 4.41103 5.44671C4.48338 5.08299 4.66195 4.7489 4.92417 4.48667C5.1864 4.22445 5.52049 4.04588 5.88421 3.97353C6.24792 3.90118 6.62492 3.93831 6.96753 4.08023C7.31014 4.22214 7.60298 4.46246 7.80901 4.77081C8.01503 5.07915 8.125 5.44166 8.125 5.8125C8.125 6.30978 7.92746 6.78669 7.57583 7.13833C7.22419 7.48996 6.74728 7.6875 6.25 7.6875ZM13.5687 6.20625C13.5106 6.14767 13.4415 6.10117 13.3654 6.06944C13.2892 6.03771 13.2075 6.02138 13.125 6.02138C13.0425 6.02138 12.9608 6.03771 12.8846 6.06944C12.8085 6.10117 12.7394 6.14767 12.6813 6.20625L11.4313 7.45625L11.0438 7.0625C10.9856 7.00392 10.9165 6.95742 10.8404 6.92569C10.7642 6.89396 10.6825 6.87763 10.6 6.87763C10.5175 6.87763 10.4358 6.89396 10.3596 6.92569C10.2835 6.95742 10.2144 7.00392 10.1562 7.0625C10.0398 7.1796 9.9745 7.33801 9.9745 7.50312C9.9745 7.66824 10.0398 7.82665 10.1562 7.94375L10.9938 8.78125C11.1109 8.89766 11.2693 8.963 11.4344 8.963C11.5995 8.963 11.7579 8.89766 11.875 8.78125L13.5438 7.1125C13.6069 7.05583 13.6578 6.9869 13.6934 6.90993C13.729 6.83295 13.7486 6.74953 13.7509 6.66474C13.7532 6.57996 13.7383 6.49559 13.707 6.41677C13.6757 6.33794 13.6286 6.26632 13.5687 6.20625V6.20625Z" fill="#0363FF"/>
+                                    </svg>
+                                    ID Check
+                                </button>
                             </div>
-                            <div class="id-check">
-                                <input type="checkbox" id="id-check" checked>
-                                <label for="id-check" class="check-label">ID Check</label>
+
+
+                            <div class="form-helper-text">
+                                Please make sure to enter a valid e-mail address as it will be your future contact point. And, kindly note that once your ID has been confirmed, you cannot modify it.
                             </div>
                         </div>
                     </div>
-                    <div class="form-helper-text">
-                        Please make sure to enter a valid e-mail address as it will be your future contact point. And, kindly note that once your ID has been confirmed, you cannot modify it.
-                    </div>
+
     
                     <!-- Password fields -->
                     <div class="form-row">
                         <div class="form-group half">
                             <label for="password">Password<span class="required">*</span></label>
                             <input type="password" id="password" class="form-control">
+                            
+
                         </div>
                         <div class="form-group half">
                             <label for="confirm-password">Confirm Password<span class="required">*</span></label>
                             <input type="password" id="confirm-password" class="form-control">
                         </div>
                     </div>
-                    <div class="form-helper-text right">
-                        Your Password can be any letters or numbers and must contain at least 6 characters.
+
+                    <div class="form-group">
+                        <label></label>
+                        <div class="form-helper-text">
+                            Your Password can be any letters or numbers and must contain at least 6 characters.
+                        </div>
                     </div>
+
                 </div>
             </div>
     
@@ -155,7 +174,7 @@
                             </div>
                         </div>
                     </div>
-    
+
                     <!-- First Name and Last Name -->
                     <div class="form-row">
                         <div class="form-group half">
@@ -167,7 +186,7 @@
                             <input type="text" id="lastName" class="form-control">
                         </div>
                     </div>
-    
+
                     <!-- Affiliation and Department -->
                     <div class="form-row">
                         <div class="form-group half">
@@ -179,39 +198,48 @@
                             <input type="text" id="department" class="form-control">
                         </div>
                     </div>
-    
+
                     <!-- Address -->
-                    <div class="form-group">
+                    <div class="form-group mb-3">
                         <label for="address">Address</label>
                         <input type="text" id="address" class="form-control">
                     </div>
-    
+
                     <!-- Phone Number -->
-                    <div class="form-group phone">
-                        <label for="phone">Phone Number (Affiliation Number)</label>
-                        <div class="phone-field">
-                            <input type="text" id="phone-country" class="phone-part" value="+82" readonly>
-                            <input type="text" id="phone" class="form-control">
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="phone1">Phone Number <br>(Affiliation Number)</label>
+                            <div class="phone-field">
+                                <input type="text" id="phone1" class="form-control phone-number" maxlength="3" placeholder="010">
+                                <input type="text" id="phone2" class="form-control phone-number" maxlength="4" placeholder="1234">
+                                <input type="text" id="phone3" class="form-control phone-number" maxlength="4" placeholder="5678">
+                            </div>
                         </div>
-                        <div class="form-helper-text phone-helper">
-                            (ex. +Country Code-Area Code-Phone Number / +82-042-123-1234)
+                        <div class="form-group half">
+                            <div class="form-helper-text phone-helper">
+                                (ex. +Country Code-Area Code-Phone Number / +82-042-123-1234)
+                            </div>
                         </div>
+
                     </div>
-    
+
                     <!-- Mobile Number -->
-                    <div class="form-group phone">
-                        <label for="mobile">Mobile Number (Cellphone Number)<span class="required">*</span></label>
-                        <div class="phone-field">
-                            <input type="text" id="mobile-country" class="phone-part" value="+82" readonly>
-                            <input type="text" id="mobile1" class="form-control">
-                            <input type="text" id="mobile2" class="form-control">
-                            <input type="text" id="mobile3" class="form-control">
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="mobile1">Mobile Number <br>(Cellphone Number)<span class="required">*</span></label>
+                            <div class="phone-field">
+                                <input type="text" id="mobile1" class="form-control phone-number" maxlength="3" placeholder="010">
+                                <input type="text" id="mobile2" class="form-control phone-number" maxlength="4" placeholder="1234">
+                                <input type="text" id="mobile3" class="form-control phone-number" maxlength="4" placeholder="5678">
+                            </div>
                         </div>
-                        <div class="form-helper-text phone-helper">
-                            (ex. +Country Code-Area Code-Phone Number / +82-042-123-1234)
+                        <div class="form-group half">
+                            <div class="form-helper-text phone-helper">
+                                (ex. +Country Code-Area Code-Phone Number / +82-042-123-1234)
+                            </div>
                         </div>
                     </div>
-    
+
                     <!-- Dietary Requirement -->
                     <div class="form-group phone">
                         <label for="dietary">Dietary Requirement<span class="required">*</span></label>
@@ -225,8 +253,11 @@
                                 <label for="dietary-vegetarian">Vegetarian</label>
                             </div>
                             <div class="radio-item">
-                                <input type="radio" id="dietary-other" name="dietary">
+                                <input type="radio" id="dietary-other" name="dietary" value="other">
                                 <label for="dietary-other">Other</label>
+                                <div class="other-input-container" id="otherInputContainer">
+                                    <input type="text" class="other-input" id="dietaryOtherText" placeholder="Please specify..." maxlength="100">
+                                </div>
                             </div>
                         </div>
                     </div>
