@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIPPLUS</title>
+
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <div class="nav__inner">
+            <a href="./list_page.html" class="nav__logo-link">
+                <img src="../assets/images/logo_b.svg" alt="DIPPLUS Logo" class="nav__logo-img">
+            </a>
+
+            <ul class="nav__menu">
+                <li class="nav__menu-item">
+                    <a href="#none" class="nav__menu-link">
+                        <img src="../assets/images/home_b.svg">
+                        Conference Home
+                    </a>
+                </li>
+                <li class="nav__menu-item"><a href="#none" class="nav__menu-link">
+                        <img src="../assets/images/logout_b.svg">Logout</a></li>
+                <li class="nav__menu-item nav__menu-item--mypage" id="myPageDropdown">
+                    <a href="#none" class="nav__menu-link">
+                        <p>
+                            <img src="../assets/images/user_B.svg"> 
+                            My Page
+                        </p>
+
+                        <svg class="mypage-dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+                            <path d="M9 12.05L4.5 7.55L5.55 6.5L9 9.95L12.45 6.5L13.5 7.55L9 12.05Z" fill="#0363FF"/>
+                        </svg>
+                    </a>
+    
+                    <!-- My Page 드롭다운 메뉴 -->
+                    <div class="mypage-dropdown-menu" id="myPageDropdownMenu">
+                        <div class="mypage-dropdown-menu__item">Personal Information</div>
+                        <div class="mypage-dropdown-menu__item">Change Password</div>
+                    </div>
+                </li>
+            </ul>
+
+            <!-- 모바일 메뉴 버튼 추가 (모바일에서만 표시됨) -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                    <path d="M3.25002 8.66667H22.75C23.0373 8.66667 23.3129 8.55253 23.5161 8.34937C23.7192 8.1462 23.8334 7.87065 23.8334 7.58333C23.8334 7.29602 23.7192 7.02047 23.5161 6.8173C23.3129 6.61414 23.0373 6.5 22.75 6.5H3.25002C2.9627 6.5 2.68715 6.61414 2.48399 6.8173C2.28082 7.02047 2.16669 7.29602 2.16669 7.58333C2.16669 7.87065 2.28082 8.1462 2.48399 8.34937C2.68715 8.55253 2.9627 8.66667 3.25002 8.66667V8.66667ZM22.75 17.3333H3.25002C2.9627 17.3333 2.68715 17.4475 2.48399 17.6506C2.28082 17.8538 2.16669 18.1293 2.16669 18.4167C2.16669 18.704 2.28082 18.9795 2.48399 19.1827C2.68715 19.3859 2.9627 19.5 3.25002 19.5H22.75C23.0373 19.5 23.3129 19.3859 23.5161 19.1827C23.7192 18.9795 23.8334 18.704 23.8334 18.4167C23.8334 18.1293 23.7192 17.8538 23.5161 17.6506C23.3129 17.4475 23.0373 17.3333 22.75 17.3333ZM22.75 11.9167H3.25002C2.9627 11.9167 2.68715 12.0308 2.48399 12.234C2.28082 12.4371 2.16669 12.7127 2.16669 13C2.16669 13.2873 2.28082 13.5629 2.48399 13.766C2.68715 13.9692 2.9627 14.0833 3.25002 14.0833H22.75C23.0373 14.0833 23.3129 13.9692 23.5161 13.766C23.7192 13.5629 23.8334 13.2873 23.8334 13C23.8334 12.7127 23.7192 12.4371 23.5161 12.234C23.3129 12.0308 23.0373 11.9167 22.75 11.9167Z" fill="#0363FF"/>
+                </svg>
+            </button>
+
+            <!-- 모바일 홈 버튼 추가 (모바일에서만 표시됨) -->
+            <a href="#" class="mobile-home-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                    <path d="M21.6666 8.66655L15.1666 2.96822C14.5708 2.43527 13.7994 2.14063 13 2.14062C12.2006 2.14063 11.4292 2.43527 10.8333 2.96822L4.33331 8.66655C3.98921 8.9743 3.71462 9.35182 3.52783 9.77398C3.34103 10.1961 3.24631 10.6533 3.24998 11.1149V20.5832C3.24998 21.4452 3.59239 22.2718 4.20188 22.8813C4.81138 23.4908 5.63803 23.8332 6.49998 23.8332H19.5C20.3619 23.8332 21.1886 23.4908 21.7981 22.8813C22.4076 22.2718 22.75 21.4452 22.75 20.5832V11.1041C22.7521 10.6442 22.6567 10.1892 22.4699 9.76904C22.2832 9.34886 22.0094 8.97309 21.6666 8.66655V8.66655ZM15.1666 21.6666H10.8333V16.2499C10.8333 15.9626 10.9475 15.687 11.1506 15.4839C11.3538 15.2807 11.6293 15.1666 11.9166 15.1666H14.0833C14.3706 15.1666 14.6462 15.2807 14.8493 15.4839C15.0525 15.687 15.1666 15.9626 15.1666 16.2499V21.6666ZM20.5833 20.5832C20.5833 20.8705 20.4692 21.1461 20.266 21.3493C20.0628 21.5524 19.7873 21.6666 19.5 21.6666H17.3333V16.2499C17.3333 15.3879 16.9909 14.5613 16.3814 13.9518C15.7719 13.3423 14.9453 12.9999 14.0833 12.9999H11.9166C11.0547 12.9999 10.228 13.3423 9.61855 13.9518C9.00906 14.5613 8.66665 15.3879 8.66665 16.2499V21.6666H6.49998C6.21266 21.6666 5.93711 21.5524 5.73395 21.3493C5.53078 21.1461 5.41665 20.8705 5.41665 20.5832V11.1041C5.41684 10.9502 5.44979 10.7982 5.5133 10.6581C5.57681 10.518 5.66942 10.3931 5.78498 10.2916L12.285 4.60405C12.4827 4.43037 12.7368 4.33459 13 4.33459C13.2631 4.33459 13.5173 4.43037 13.715 4.60405L20.215 10.2916C20.3305 10.3931 20.4232 10.518 20.4867 10.6581C20.5502 10.7982 20.5831 10.9502 20.5833 11.1041V20.5832Z" fill="#0363FF"/>
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <div class="nav-container">
+        <ul class="nav-menu">
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link" id="paper-submission">Paper Submission / Status</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Registration Submission / Status</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Paper Transfer</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Paper Review</a>
+            </li>
+        </ul>
+
+        <!-- 드롭다운 메뉴 - 전체 너비 -->
+        <div class="dropdown-container" id="dropdown-container">
+            <div class="dropdown-wrapper">
+                <div class="dropdown-content" id="paper-dropdown">
+                    <a href="#" class="dropdown-link">Paper</a>
+                    <a href="#" class="dropdown-link">Late-news Paper</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모바일 사이드 메뉴 추가 -->
+    <div class="mobile-side-menu" id="mobileSideMenu">
+        <div class="side_menu-container">
+            <div class="side-menu-header">
+                <button class="close-btn" id="closeMenuBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="#0363FF" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+
+                <div class="side-logo">
+                    <img src="../assets/images/mobile_logo_full.svg" alt="DIPPLUS Logo">
+                </div>
+
+                <div class="user-menu">
+                    <a href="#" class="user-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                            <path
+                                d="M13 2.1665C10.8989 2.1705 8.84422 2.78542 7.08634 3.93639C5.32847 5.08735 3.94323 6.72467 3.09937 8.64892C2.2555 10.5732 1.98942 12.7013 2.33354 14.7741C2.67766 16.8469 3.61713 18.7748 5.03751 20.3232V20.3232C6.05197 21.4228 7.2832 22.3004 8.65361 22.9006C10.024 23.5009 11.5039 23.8108 13 23.8108C14.4961 23.8108 15.976 23.5009 17.3464 22.9006C18.7168 22.3004 19.9481 21.4228 20.9625 20.3232V20.3232C22.3829 18.7748 23.3224 16.8469 23.6665 14.7741C24.0106 12.7013 23.7445 10.5732 22.9007 8.64892C22.0568 6.72467 20.6716 5.08735 18.9137 3.93639C17.1558 2.78542 15.1012 2.1705 13 2.1665V2.1665ZM13 21.6665C10.7558 21.6631 8.6005 20.7893 6.98751 19.229C7.47723 18.0368 8.3103 17.0172 9.38087 16.2995C10.4514 15.5819 11.7112 15.1988 13 15.1988C14.2888 15.1988 15.5486 15.5819 16.6192 16.2995C17.6897 17.0172 18.5228 18.0368 19.0125 19.229C17.3995 20.7893 15.2442 21.6631 13 21.6665ZM10.8333 10.8332C10.8333 10.4046 10.9604 9.98574 11.1985 9.62944C11.4366 9.27313 11.775 8.99542 12.1709 8.83143C12.5668 8.66744 13.0024 8.62453 13.4227 8.70814C13.843 8.79174 14.2291 8.99809 14.5321 9.30111C14.8351 9.60412 15.0414 9.99018 15.125 10.4105C15.2086 10.8308 15.1657 11.2664 15.0018 11.6623C14.8378 12.0582 14.5601 12.3966 14.2037 12.6347C13.8474 12.8728 13.4285 12.9998 13 12.9998C12.4254 12.9998 11.8743 12.7716 11.4679 12.3652C11.0616 11.9589 10.8333 11.4078 10.8333 10.8332ZM20.4858 17.3332C19.5179 15.6776 18.0282 14.3898 16.25 13.6715C16.8016 13.046 17.161 12.2747 17.2851 11.4501C17.4092 10.6254 17.2927 9.78246 16.9496 9.02238C16.6065 8.26229 16.0513 7.61736 15.3507 7.16497C14.6502 6.71257 13.834 6.47194 13 6.47194C12.1661 6.47194 11.3498 6.71257 10.6493 7.16497C9.94871 7.61736 9.39356 8.26229 9.05045 9.02238C8.70733 9.78246 8.59083 10.6254 8.71492 11.4501C8.83901 12.2747 9.19841 13.046 9.75001 13.6715C7.97183 14.3898 6.4821 15.6776 5.51418 17.3332C4.74278 16.0192 4.33521 14.5235 4.33335 12.9998C4.33335 10.7013 5.24644 8.49689 6.87175 6.87158C8.49707 5.24626 10.7015 4.33317 13 4.33317C15.2986 4.33317 17.503 5.24626 19.1283 6.87158C20.7536 8.49689 21.6667 10.7013 21.6667 12.9998C21.6648 14.5235 21.2572 16.0192 20.4858 17.3332V17.3332Z"
+                                fill="#0363FF" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="side-menu-content">
+                <div class="accordion-menu">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            Paper Submission / Status
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" class="accordion-icon">
+                                <path
+                                    d="M16.9999 9.17019C16.8126 8.98394 16.5591 8.87939 16.2949 8.87939C16.0308 8.87939 15.7773 8.98394 15.5899 9.17019L11.9999 12.7102L8.45995 9.17019C8.27259 8.98394 8.01913 8.87939 7.75495 8.87939C7.49076 8.87939 7.23731 8.98394 7.04995 9.17019C6.95622 9.26315 6.88183 9.37375 6.83106 9.49561C6.78029 9.61747 6.75415 9.74818 6.75415 9.88019C6.75415 10.0122 6.78029 10.1429 6.83106 10.2648C6.88183 10.3866 6.95622 10.4972 7.04995 10.5902L11.2899 14.8302C11.3829 14.9239 11.4935 14.9983 11.6154 15.0491C11.7372 15.0998 11.8679 15.126 11.9999 15.126C12.132 15.126 12.2627 15.0998 12.3845 15.0491C12.5064 14.9983 12.617 14.9239 12.7099 14.8302L16.9999 10.5902C17.0937 10.4972 17.1681 10.3866 17.2188 10.2648C17.2696 10.1429 17.2957 10.0122 17.2957 9.88019C17.2957 9.74818 17.2696 9.61747 17.2188 9.49561C17.1681 9.37375 17.0937 9.26315 16.9999 9.17019Z"
+                                    fill="#A2A2A2" />
+                            </svg>
+                        </button>
+                        <div class="accordion-content">
+                            <a href="#">Paper</a>
+                            <a href="#">Late-news Paper</a>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            Registration Submission / Status
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" class="accordion-icon">
+                                <path
+                                    d="M16.9999 9.17019C16.8126 8.98394 16.5591 8.87939 16.2949 8.87939C16.0308 8.87939 15.7773 8.98394 15.5899 9.17019L11.9999 12.7102L8.45995 9.17019C8.27259 8.98394 8.01913 8.87939 7.75495 8.87939C7.49076 8.87939 7.23731 8.98394 7.04995 9.17019C6.95622 9.26315 6.88183 9.37375 6.83106 9.49561C6.78029 9.61747 6.75415 9.74818 6.75415 9.88019C6.75415 10.0122 6.78029 10.1429 6.83106 10.2648C6.88183 10.3866 6.95622 10.4972 7.04995 10.5902L11.2899 14.8302C11.3829 14.9239 11.4935 14.9983 11.6154 15.0491C11.7372 15.0998 11.8679 15.126 11.9999 15.126C12.132 15.126 12.2627 15.0998 12.3845 15.0491C12.5064 14.9983 12.617 14.9239 12.7099 14.8302L16.9999 10.5902C17.0937 10.4972 17.1681 10.3866 17.2188 10.2648C17.2696 10.1429 17.2957 10.0122 17.2957 9.88019C17.2957 9.74818 17.2696 9.61747 17.2188 9.49561C17.1681 9.37375 17.0937 9.26315 16.9999 9.17019Z"
+                                    fill="#A2A2A2" />
+                            </svg>
+                        </button>
+                        <div class="accordion-content">
+                            <a href="#">Registration Option 1</a>
+                            <a href="#">Registration Option 2</a>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            Paper Transfer
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" class="accordion-icon">
+                                <path
+                                    d="M16.9999 9.17019C16.8126 8.98394 16.5591 8.87939 16.2949 8.87939C16.0308 8.87939 15.7773 8.98394 15.5899 9.17019L11.9999 12.7102L8.45995 9.17019C8.27259 8.98394 8.01913 8.87939 7.75495 8.87939C7.49076 8.87939 7.23731 8.98394 7.04995 9.17019C6.95622 9.26315 6.88183 9.37375 6.83106 9.49561C6.78029 9.61747 6.75415 9.74818 6.75415 9.88019C6.75415 10.0122 6.78029 10.1429 6.83106 10.2648C6.88183 10.3866 6.95622 10.4972 7.04995 10.5902L11.2899 14.8302C11.3829 14.9239 11.4935 14.9983 11.6154 15.0491C11.7372 15.0998 11.8679 15.126 11.9999 15.126C12.132 15.126 12.2627 15.0998 12.3845 15.0491C12.5064 14.9983 12.617 14.9239 12.7099 14.8302L16.9999 10.5902C17.0937 10.4972 17.1681 10.3866 17.2188 10.2648C17.2696 10.1429 17.2957 10.0122 17.2957 9.88019C17.2957 9.74818 17.2696 9.61747 17.2188 9.49561C17.1681 9.37375 17.0937 9.26315 16.9999 9.17019Z"
+                                    fill="#A2A2A2" />
+                            </svg>
+                        </button>
+                        <div class="accordion-content">
+                            <a href="#">Transfer Option 1</a>
+                            <a href="#">Transfer Option 2</a>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            Paper Review
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" class="accordion-icon">
+                                <path
+                                    d="M16.9999 9.17019C16.8126 8.98394 16.5591 8.87939 16.2949 8.87939C16.0308 8.87939 15.7773 8.98394 15.5899 9.17019L11.9999 12.7102L8.45995 9.17019C8.27259 8.98394 8.01913 8.87939 7.75495 8.87939C7.49076 8.87939 7.23731 8.98394 7.04995 9.17019C6.95622 9.26315 6.88183 9.37375 6.83106 9.49561C6.78029 9.61747 6.75415 9.74818 6.75415 9.88019C6.75415 10.0122 6.78029 10.1429 6.83106 10.2648C6.88183 10.3866 6.95622 10.4972 7.04995 10.5902L11.2899 14.8302C11.3829 14.9239 11.4935 14.9983 11.6154 15.0491C11.7372 15.0998 11.8679 15.126 11.9999 15.126C12.132 15.126 12.2627 15.0998 12.3845 15.0491C12.5064 14.9983 12.617 14.9239 12.7099 14.8302L16.9999 10.5902C17.0937 10.4972 17.1681 10.3866 17.2188 10.2648C17.2696 10.1429 17.2957 10.0122 17.2957 9.88019C17.2957 9.74818 17.2696 9.61747 17.2188 9.49561C17.1681 9.37375 17.0937 9.26315 16.9999 9.17019Z"
+                                    fill="#A2A2A2" />
+                            </svg>
+                        </button>
+                        <div class="accordion-content">
+                            <a href="#">Review Option 1</a>
+                            <a href="#">Review Option 2</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="logout-btn">
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 17 18" fill="none">
+                    <path
+                        d="M2.83337 8.99984C2.83337 9.1877 2.908 9.36787 3.04084 9.5007C3.17368 9.63354 3.35385 9.70817 3.54171 9.70817H8.91796L7.28879 11.3303C7.2224 11.3961 7.1697 11.4744 7.13374 11.5608C7.09778 11.6471 7.07927 11.7397 7.07927 11.8332C7.07927 11.9267 7.09778 12.0193 7.13374 12.1056C7.1697 12.1919 7.2224 12.2702 7.28879 12.3361C7.35464 12.4025 7.43298 12.4552 7.5193 12.4911C7.60562 12.5271 7.6982 12.5456 7.79171 12.5456C7.88522 12.5456 7.9778 12.5271 8.06412 12.4911C8.15043 12.4552 8.22878 12.4025 8.29462 12.3361L11.128 9.50275C11.1924 9.43539 11.243 9.35595 11.2767 9.269C11.3476 9.09655 11.3476 8.90312 11.2767 8.73067C11.243 8.64372 11.1924 8.56429 11.128 8.49692L8.29462 5.66359C8.22858 5.59754 8.15018 5.54515 8.06388 5.50941C7.97759 5.47367 7.88511 5.45527 7.79171 5.45527C7.69831 5.45527 7.60582 5.47367 7.51953 5.50941C7.43324 5.54515 7.35483 5.59754 7.28879 5.66359C7.22275 5.72963 7.17036 5.80804 7.13462 5.89433C7.09887 5.98062 7.08048 6.0731 7.08048 6.1665C7.08048 6.2599 7.09887 6.35239 7.13462 6.43868C7.17036 6.52497 7.22275 6.60338 7.28879 6.66942L8.91796 8.2915H3.54171C3.35385 8.2915 3.17368 8.36613 3.04084 8.49897C2.908 8.63181 2.83337 8.81198 2.83337 8.99984V8.99984ZM12.0417 1.9165H4.95837C4.39479 1.9165 3.85429 2.14039 3.45577 2.5389C3.05726 2.93742 2.83337 3.47792 2.83337 4.0415V6.1665C2.83337 6.35437 2.908 6.53453 3.04084 6.66737C3.17368 6.80021 3.35385 6.87484 3.54171 6.87484C3.72957 6.87484 3.90974 6.80021 4.04257 6.66737C4.17541 6.53453 4.25004 6.35437 4.25004 6.1665V4.0415C4.25004 3.85364 4.32467 3.67347 4.45751 3.54064C4.59035 3.4078 4.77051 3.33317 4.95837 3.33317H12.0417C12.2296 3.33317 12.4097 3.4078 12.5426 3.54064C12.6754 3.67347 12.75 3.85364 12.75 4.0415V13.9582C12.75 14.146 12.6754 14.3262 12.5426 14.459C12.4097 14.5919 12.2296 14.6665 12.0417 14.6665H4.95837C4.77051 14.6665 4.59035 14.5919 4.45751 14.459C4.32467 14.3262 4.25004 14.146 4.25004 13.9582V11.8332C4.25004 11.6453 4.17541 11.4651 4.04257 11.3323C3.90974 11.1995 3.72957 11.1248 3.54171 11.1248C3.35385 11.1248 3.17368 11.1995 3.04084 11.3323C2.908 11.4651 2.83337 11.6453 2.83337 11.8332V13.9582C2.83337 14.5218 3.05726 15.0623 3.45577 15.4608C3.85429 15.8593 4.39479 16.0832 4.95837 16.0832H12.0417C12.6053 16.0832 13.1458 15.8593 13.5443 15.4608C13.9428 15.0623 14.1667 14.5218 14.1667 13.9582V4.0415C14.1667 3.47792 13.9428 2.93742 13.5443 2.5389C13.1458 2.14039 12.6053 1.9165 12.0417 1.9165Z"
+                        fill="#768EB4" />
+                </svg>
+                Logout
+            </a>
+        </div>
+    </div>
+
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- page title -->
+    <h1 class="page-title">Registration Details</h1>
+
+    <!-- CONTENT -->
+    <section class="content plus-page">
+
+        <!-- Participant Documents & Payment Modify Section -->
+        <section class="registration-details participant-payment-section">
+            <div class="registration-details-wrapper">
+                <!-- Participant Documents -->
+                <div class="registration-row">
+                    <div class="registration-label">Participant Documents</div>
+                    <div class="registration-value">
+                        <div class="document-list">
+                            <a href="#" class="document-item">
+                                <i class="bi bi-file-earmark-text document-icon"></i>
+                                <span class="document-name">Invoice</span>
+                            </a>
+                            <a href="#" class="document-item">
+                                <i class="bi bi-file-earmark-check document-icon"></i>
+                                <span class="document-name">Receipt</span>
+                            </a>
+                            <a href="#" class="document-item">
+                                <i class="bi bi-file-earmark-medical document-icon"></i>
+                                <span class="document-name">Confirmation letter</span>
+                            </a>
+                            <a href="#" class="document-item">
+                                <i class="bi bi-card-heading document-icon"></i>
+                                <span class="document-name">e-Name Badge</span>
+                            </a>
+                            <a href="#" class="document-item">
+                                <i class="bi bi-award document-icon"></i>
+                                <span class="document-name">e-ParticipationCertificate</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment & Modify -->
+                <div class="registration-row">
+                    <div class="registration-label">Payment & Modify</div>
+                    <div class="registration-value">
+                        <button type="button" class="btn-view">View</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registration Fee Section -->
+        <div class="registration-fee-section">
+            <h2 class="fee-title">3. Registration Fee</h2>
+            <div class="fee-details">
+                <div class="fee-row">
+                    <div class="fee-label">Period</div>
+                    <div class="fee-value">Early-Registration</div>
+                </div>
+                <div class="fee-row">
+                    <div class="fee-label">Type</div>
+                    <div class="fee-value">FULL PASS</div>
+                </div>
+                <div class="fee-total-row">
+                    <div class="fee-total-label">Total</div>
+                    <div class="fee-total-value">USD 400</div>
+                </div>
+            </div>
+            <p class="fee-note">* If any of the following applies to you, please stop completing the form and contact the Secretariat by email(info@dipplus.co.kr) first:</p>
+        </div>
+
+        <!-- Registration Form Section -->
+        <div class="registration-form-section">
+            <div class="form-instructions">
+                <ul>
+                    <li>If you were interrupted while completing the form, please do not create a new form. Please click the 4 digits of the registration number to complete your submission.</li>
+                    <li>At least one author must complete registration for each accepted paper by the deadline.</li>
+                    <li>Please confirm meal attendance during registration. Meal coupons are provided only to those who indicate participation.</li>
+                </ul>
+            </div>
+            
+            <button type="button" class="btn-registration-form">Registration Form</button>
+            
+            <div class="participant-documents-info">
+                <div class="documents-info-box">
+                    <div class="doc-info-item">
+                        <span class="doc-info-icon">•</span>
+                        <div class="doc-info-content">
+                            <strong>Invoice:</strong> Documents that can be verified <u>before completing payment</u> (결제 전 발급)
+                        </div>
+                    </div>
+                    <div class="doc-info-item">
+                        <span class="doc-info-icon">•</span>
+                        <div class="doc-info-content">
+                            <strong>Receipt, Confirmation letter:</strong> Documents that can be confirmed <u>after payment is completed</u> (결제 후 발급)
+                        </div>
+                    </div>
+                    <div class="doc-info-item">
+                        <span class="doc-info-icon">•</span>
+                        <div class="doc-info-content">
+                            <strong>e-Name Badge, Participation Certificate:</strong> Available from <u>the conference start date</u> (November 10, 2025) (행사 시작 후 발급)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <div class="footer__inner">
+            <h4 class="footer__inenr--title">
+                2025 ADBS Secretariat
+            </h4>
+            <ul class="footer__info">
+                <li class="footer__info--list">
+                    Genicom Co., Ltd. 273, Baeul 1-ro, Yuseong-gu, Daejeon 34036, Korea
+                </li>
+                <li class="footer__info--list">
+                    Tel: +82-42-472-7460 / Fax: +82-42-472-7459 / Email : info@adbs2025.com
+                </li>
+                <li class="footer__info--list">
+                    President Bok Kyung Kim Business Number 314-81-33980
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="../assets/js/common.js"></script>
+</body>
+
+</html>
+
