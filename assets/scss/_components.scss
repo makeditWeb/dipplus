@@ -1934,6 +1934,61 @@ header {
         font-size: 13px;
         font-weight: 400;
     }
+
+    // 체크박스 그룹 스타일
+    &--group {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 15px 20px;
+        margin-bottom: 30px;
+
+        .policy_check-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+
+            input[type=checkbox] {
+                margin: 0;
+                flex-shrink: 0;
+            }
+
+            label {
+                margin: 0;
+                white-space: nowrap;
+                flex-shrink: 0;
+                cursor: pointer;
+            }
+        }
+
+        // 모바일 반응형
+        @media (max-width: 768px) {
+            gap: 12px 10px;
+            justify-content: flex-start;
+
+            .policy_check-item {
+                flex: 0 0 calc(50% - 5px); // 한 줄에 2개씩
+                min-width: 120px; // 최소 너비 보장
+                max-width: calc(50% - 5px);
+                gap: 6px;
+                box-sizing: border-box;
+
+                // 작은 모바일에서는 2개씩 유지 (겹치지 않도록)
+                @media (max-width: 480px) {
+                    flex: 0 0 calc(50% - 5px);
+                    min-width: 100px;
+                }
+
+                // 매우 작은 화면에서는 1개씩
+                @media (max-width: 360px) {
+                    flex: 0 0 100%;
+                    min-width: 100%;
+                }
+            }
+        }
+    }
 }
 
 .submission_btn{
@@ -2113,17 +2168,17 @@ header {
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        gap: 6px;
         padding: 10px 24px;
         border-radius: 8px;
-        background: #0363FF;
-        color: #fff;
-        border: none;
+        background: transparent;
+        color: #0363FF;
+        border: 1.5px solid #0363FF;
         font-size: 14px;
         font-weight: $font-semibold;
         font-family: $font-primary;
         cursor: pointer;
         transition: all 0.2s ease;
-        box-shadow: 0 2px 4px rgba(3, 99, 255, 0.2);
 
         @media (max-width: 768px) {
             padding: 8px 20px;
@@ -2131,19 +2186,27 @@ header {
         }
 
         &:hover {
-            background: #0252CC;
-            box-shadow: 0 4px 8px rgba(3, 99, 255, 0.3);
+            background: #0363FF;
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(3, 99, 255, 0.25);
             transform: translateY(-1px);
         }
 
         &:active {
             transform: translateY(0);
-            box-shadow: 0 2px 4px rgba(3, 99, 255, 0.2);
+            box-shadow: 0 1px 4px rgba(3, 99, 255, 0.2);
         }
 
         &:focus {
             outline: none;
-            box-shadow: 0 0 0 3px rgba(3, 99, 255, 0.2);
+            box-shadow: 0 0 0 3px rgba(3, 99, 255, 0.15);
+        }
+
+        // 아이콘 스타일 (선택사항)
+        svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
         }
     }
 

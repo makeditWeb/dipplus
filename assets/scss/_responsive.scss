@@ -550,8 +550,19 @@
         gap: 10px;
     }
 
-    .policy_check label{
-        width: calc(100% - 35px);
+    .policy_check {
+        label {
+            width: calc(100% - 35px);
+        }
+
+        // 체크박스 그룹 모바일 스타일
+        &--group {
+            .policy_check-item {
+                // 모바일에서도 체크박스와 라벨이 함께 유지되도록
+                display: flex;
+                align-items: center;
+            }
+        }
     }
 
 

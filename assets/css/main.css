@@ -11630,7 +11630,6 @@ header .nav__inner .nav__menu .nav__menu-item--mypage .mypage-dropdown-menu__ite
 .policy_check {
   display: flex;
   align-items: center;
-  justify-content: center;
   margin-bottom: 40px;
 }
 .policy_check input[type=checkbox] {
@@ -11670,6 +11669,55 @@ header .nav__inner .nav__menu .nav__menu-item--mypage .mypage-dropdown-menu__ite
   font-family: "Pretendard", sans-serif;
   font-size: 13px;
   font-weight: 400;
+}
+.policy_check--group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 15px 20px;
+  margin-bottom: 30px;
+}
+.policy_check--group .policy_check-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.policy_check--group .policy_check-item input[type=checkbox] {
+  margin: 0;
+  flex-shrink: 0;
+}
+.policy_check--group .policy_check-item label {
+  margin: 0;
+  white-space: nowrap;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .policy_check--group {
+    gap: 12px 10px;
+    justify-content: flex-start;
+  }
+  .policy_check--group .policy_check-item {
+    flex: 0 0 calc(50% - 5px);
+    min-width: 120px;
+    max-width: calc(50% - 5px);
+    gap: 6px;
+    box-sizing: border-box;
+  }
+}
+@media (max-width: 768px) and (max-width: 480px) {
+  .policy_check--group .policy_check-item {
+    flex: 0 0 calc(50% - 5px);
+    min-width: 100px;
+  }
+}
+@media (max-width: 768px) and (max-width: 360px) {
+  .policy_check--group .policy_check-item {
+    flex: 0 0 100%;
+    min-width: 100%;
+  }
 }
 
 .submission_btn {
@@ -11835,17 +11883,17 @@ header .nav__inner .nav__menu .nav__menu-item--mypage .mypage-dropdown-menu__ite
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 6px;
   padding: 10px 24px;
   border-radius: 8px;
-  background: #0363FF;
-  color: #fff;
-  border: none;
+  background: transparent;
+  color: #0363FF;
+  border: 1.5px solid #0363FF;
   font-size: 14px;
   font-weight: 600;
   font-family: "Pretendard", sans-serif;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 4px rgba(3, 99, 255, 0.2);
 }
 @media (max-width: 768px) {
   .content.plus-page .btn-view {
@@ -11854,17 +11902,23 @@ header .nav__inner .nav__menu .nav__menu-item--mypage .mypage-dropdown-menu__ite
   }
 }
 .content.plus-page .btn-view:hover {
-  background: #0252CC;
-  box-shadow: 0 4px 8px rgba(3, 99, 255, 0.3);
+  background: #0363FF;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(3, 99, 255, 0.25);
   transform: translateY(-1px);
 }
 .content.plus-page .btn-view:active {
   transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(3, 99, 255, 0.2);
+  box-shadow: 0 1px 4px rgba(3, 99, 255, 0.2);
 }
 .content.plus-page .btn-view:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(3, 99, 255, 0.2);
+  box-shadow: 0 0 0 3px rgba(3, 99, 255, 0.15);
+}
+.content.plus-page .btn-view svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
 }
 .content.plus-page .registration-fee-section {
   width: 100%;
@@ -12628,6 +12682,10 @@ header .nav__inner .nav__menu .nav__menu-item--mypage .mypage-dropdown-menu__ite
   }
   .policy_check label {
     width: calc(100% - 35px);
+  }
+  .policy_check--group .policy_check-item {
+    display: flex;
+    align-items: center;
   }
 }
 
