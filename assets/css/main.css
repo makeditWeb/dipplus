@@ -11630,7 +11630,7 @@ header .nav__inner .nav__menu .nav__menu-item--mypage .mypage-dropdown-menu__ite
 .policy_check {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   margin-bottom: 40px;
 }
 .policy_check input[type=checkbox] {

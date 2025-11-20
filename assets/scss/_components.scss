@@ -1890,7 +1890,7 @@ header {
 }
 
 .policy_check {
-    @include flex-center;
+    @include flex-start;
     margin-bottom: 40px;
 
     input[type=checkbox] {
